@@ -170,3 +170,15 @@ message: "API key not valid. Please pass a valid API key."
 2025-12-02 09:29:53,541 - backend.app.routers.upload - INFO - Document upload request received: WhatsApp Image 2025-11-30 at 15.05.32_6b317c0a.jpg
 2025-12-02 09:29:54,075 - backend.app.services.gemini - INFO - Gemini API configured successfully
 2025-12-02 09:29:54,148 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-02 09:38:57,581 - backend.app.routers.triage - INFO - Triage request received: sugar level is about 250 and bp is about 188 and 1...
+2025-12-02 09:38:57,912 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-02 09:38:57,918 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-02 09:39:07,143 - backend.app.routers.triage - INFO - Triage completed in 9.56s - Level: High
+2025-12-02 09:39:41,934 - backend.app.routers.triage - INFO - Triage request received: my sugar level is about 250 and bp is 188 and 120...
+2025-12-02 09:39:41,996 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-02 09:39:42,004 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-02 09:39:49,839 - backend.app.routers.triage - INFO - Triage completed in 7.90s - Level: High
+2025-12-02 09:40:59,035 - backend.app.routers.triage - INFO - Triage request received: I have a medical report I need help understanding....
+2025-12-02 09:40:59,074 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-02 09:40:59,075 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-02 09:41:03,378 - backend.app.routers.triage - INFO - Triage completed in 4.34s - Level: Medium
