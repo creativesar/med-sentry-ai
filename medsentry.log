@@ -252,3 +252,7 @@ message: "API key not valid. Please pass a valid API key."
 2025-12-03 04:17:16,935 - backend.app.services.gemini - INFO - Gemini API configured successfully
 2025-12-03 04:17:16,936 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
 2025-12-03 04:17:26,435 - backend.app.routers.triage - INFO - Triage completed in 9.53s - Level: High
+2025-12-03 04:19:54,450 - backend.app.routers.triage - INFO - Triage request received: my neighbor has headche and bp is 145 and 100...
+2025-12-03 04:19:54,684 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 04:19:54,687 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 04:20:04,792 - backend.app.routers.triage - INFO - Triage completed in 10.34s - Level: Medium
