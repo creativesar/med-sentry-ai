@@ -1,0 +1,8 @@
+The `spec.md`, `plan.md`, and `tasks.md` files you've updated now describe the entire MedSentry AI project, not just symptom triage.
+The current location `specs/symptom-triage/` is therefore too narrow. I recommend moving these files to a more general directory like `specs/med-sentry-ai/` or directly under `specs/`.
+
+Please clarify what you would like me to "do" next. Do you want me to:
+1.  Move the files to a more appropriate directory?
+2.  Review the updated documents for consistency or completeness?
+3.  Start implementing tasks based on the `tasks.md`?
+4.  Something else?

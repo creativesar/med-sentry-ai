@@ -1,0 +1,172 @@
+2025-12-01 20:17:32,274 - backend.app.routers.triage - INFO - Triage request received: hi...
+2025-12-01 20:17:32,557 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-01 20:17:32,560 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-01 20:17:33,472 - backend.app.routers.triage - ERROR - Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-01 20:26:08,387 - backend.app.routers.triage - INFO - Triage request received: hi...
+2025-12-01 20:26:09,142 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-01 20:26:09,170 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-01 20:26:11,057 - backend.app.routers.triage - ERROR - Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-01 20:34:10,909 - backend.app.routers.triage - INFO - Triage request received: hi...
+2025-12-01 20:34:10,984 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-01 20:34:10,989 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-01 20:34:12,075 - backend.app.routers.triage - ERROR - Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-01 20:35:31,014 - backend.app.routers.triage - INFO - Triage request received: hi...
+2025-12-01 20:35:31,090 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-01 20:35:31,090 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-01 20:35:31,651 - backend.app.routers.triage - ERROR - Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-01 20:38:26,811 - backend.app.routers.triage - INFO - Triage request received: headache...
+2025-12-01 20:38:27,237 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-01 20:38:27,243 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-01 20:38:27,795 - backend.app.routers.triage - ERROR - Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-01 20:44:09,273 - backend.app.routers.triage - INFO - Triage request received: I have a headacheheadache and fever...
+2025-12-01 20:44:09,407 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-01 20:44:09,433 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-01 20:44:10,355 - backend.app.routers.triage - ERROR - Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-01 20:45:17,490 - backend.app.routers.triage - INFO - Triage request received: i have fever and flu...
+2025-12-01 20:45:17,551 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-01 20:45:17,561 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-01 20:45:17,946 - backend.app.routers.triage - ERROR - Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-01 20:48:19,936 - backend.app.routers.triage - INFO - Triage request received: i have flu and fever...
+2025-12-01 20:48:20,210 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-01 20:48:20,210 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-01 20:48:21,270 - backend.app.routers.triage - ERROR - Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-01 20:49:01,050 - python_multipart.multipart - WARNING - Skipping data after last boundary
+2025-12-01 20:49:01,082 - backend.app.routers.upload - INFO - Document upload request received: WhatsApp Image 2025-11-30 at 15.05.32_6b317c0a.jpg
+2025-12-01 20:49:01,334 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-01 20:49:01,351 - backend.app.services.gemini - INFO - Using Gemini model: gemini-1.5-flash
+2025-12-01 20:49:02,825 - backend.app.routers.upload - ERROR - Gemini API error for document analysis: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-01 20:49:27,860 - backend.app.routers.triage - INFO - Triage request received: i have flu and fever...
+2025-12-01 20:49:27,922 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-01 20:49:27,935 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-01 20:49:28,525 - backend.app.routers.triage - ERROR - Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-01 20:51:47,658 - backend.app.routers.triage - INFO - Triage request received: i have flu and fever...
+2025-12-01 20:51:48,590 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-01 20:51:48,792 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-01 20:51:52,527 - backend.app.routers.triage - ERROR - Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-01 20:52:48,527 - backend.app.routers.triage - INFO - Triage request received: sore throat...
+2025-12-01 20:52:49,208 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-01 20:52:49,220 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-01 20:52:52,892 - backend.app.routers.triage - ERROR - Gemini API error: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-12-02 09:12:25,590 - backend.app.routers.triage - INFO - Triage request received: hi...
+2025-12-02 09:12:25,678 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-02 09:12:25,680 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-02 09:12:30,161 - backend.app.routers.triage - INFO - Triage completed in 4.57s - Level: Low
+2025-12-02 09:12:52,001 - backend.app.routers.upload - INFO - Document upload request received: WhatsApp Image 2025-11-30 at 15.05.32_6b317c0a.jpg
+2025-12-02 09:12:52,028 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-02 09:12:52,029 - backend.app.services.gemini - INFO - Using Gemini model: gemini-1.5-flash
+2025-12-02 09:12:53,317 - backend.app.routers.upload - ERROR - Gemini API error for document analysis: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-12-02 09:15:46,193 - backend.app.routers.upload - INFO - Document upload request received: WhatsApp Image 2025-11-30 at 15.05.32_6b317c0a.jpg
+2025-12-02 09:15:46,330 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-02 09:15:46,348 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-02 09:16:22,520 - backend.app.routers.triage - INFO - Triage request received: Vital signs update:
+• Temperature:
+• Blood pressur...
+2025-12-02 09:16:22,575 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-02 09:16:22,582 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-02 09:16:29,826 - backend.app.routers.triage - INFO - Triage completed in 7.31s - Level: Medium
+2025-12-02 09:16:41,873 - backend.app.routers.triage - INFO - Triage request received: Symptom checklist:
+• Primary concern:
+• Duration:
+...
+2025-12-02 09:16:41,911 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-02 09:16:41,912 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-02 09:16:46,659 - backend.app.routers.triage - INFO - Triage completed in 4.79s - Level: Low
+2025-12-02 09:29:53,541 - backend.app.routers.upload - INFO - Document upload request received: WhatsApp Image 2025-11-30 at 15.05.32_6b317c0a.jpg
+2025-12-02 09:29:54,075 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-02 09:29:54,148 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash

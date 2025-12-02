@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+:root {
+  /* Premium Medical Palette */
+  --background: #f8fafc;
+  /* Slate 50 */
+  --foreground: #0f172a;
+  /* Slate 900 */
+
+  /* Primary - Soft Grey-Blue for Professional Medical Look */
+  --primary: #64748b;
+  /* Slate 500 - Softer grey-blue */
+  --primary-foreground: #ffffff;
+
+  /* Secondary - Soft Slate */
+  --secondary: #f1f5f9;
+  /* Slate 100 */
+  --secondary-foreground: #334155;
+  /* Slate 700 */
+
+  /* Accent - Muted Blue */
+  --accent: #94a3b8;
+  /* Slate 400 */
+  --accent-foreground: #0f172a;
+
+  /* Destructive - Clinical Red */
+  --destructive: #ef4444;
+  /* Red 500 */
+  --destructive-foreground: #ffffff;
+
+  /* Muted - Subtle Grays */
+  --muted: #f8fafc;
+  /* Slate 50 */
+  --muted-foreground: #475569;
+  /* Slate 600 - Better contrast */
+
+  /* Card - Clean White */
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+
+  --border: #cbd5e1;
+  /* Slate 300 - More visible */
+  --input: #e2e8f0;
+  --ring: #64748b;
+  /* Slate 500 - Match primary */
+
+  --radius: 1rem;
+  /* More rounded for modern feel */
+
+  /* Triage Colors */
+  --triage-low: #10b981;
+  /* Emerald 500 */
+  --triage-medium: #f59e0b;
+  /* Amber 500 */
+  --triage-high: #ef4444;
+  /* Red 500 */
+
+  /* Shadows - Soft & Deep */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-glow: 0 0 20px rgba(6, 182, 212, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f172a;
+    /* Slate 900 */
+    --foreground: #f8fafc;
+    /* Slate 50 */
+
+    --primary: #22d3ee;
+    /* Cyan 400 */
+    --primary-foreground: #0f172a;
+
+    --secondary: #1e293b;
+    /* Slate 800 */
+    --secondary-foreground: #f8fafc;
+
+    --accent: #0891b2;
+    /* Cyan 600 */
+    --accent-foreground: #ffffff;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --muted: #1e293b;
+    /* Slate 800 */
+    --muted-foreground: #94a3b8;
+    /* Slate 400 */
+
+    --card: #1e293b;
+    /* Slate 800 */
+    --card-foreground: #f8fafc;
+
+    --border: #334155;
+    /* Slate 700 */
+    --input: #334155;
+    --ring: #22d3ee;
+
+    --shadow-glow: 0 0 20px rgba(34, 211, 238, 0.2);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --color-triage-low: var(--triage-low);
+  --color-triage-medium: var(--triage-medium);
+  --color-triage-high: var(--triage-high);
+
+  --animate-pulse-emergency: pulse-emergency 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom Scrollbar - Enhanced */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+  background-clip: padding-box;
+}
+
+/* Smooth Animations */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Loading Skeleton Animation */
+@keyframes skeletonPulse {
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.skeleton {
+  background: #e2e8f0;
+  animation: skeletonPulse 1.6s ease-in-out infinite;
+}
+
+/* Pulse Animation for Emergency */
+@keyframes pulse-emergency {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.pulse-emergency {
+  animation: pulse-emergency 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Glass Morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Focus Visible Enhancement */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
