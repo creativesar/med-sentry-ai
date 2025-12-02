@@ -186,3 +186,41 @@ message: "API key not valid. Please pass a valid API key."
 2025-12-02 10:14:57,460 - backend.app.services.gemini - INFO - Gemini API configured successfully
 2025-12-02 10:14:57,495 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
 2025-12-02 10:15:05,984 - backend.app.routers.triage - INFO - Triage completed in 8.96s - Level: Medium
+2025-12-03 03:46:56,087 - backend.app.routers.triage - INFO - Triage request received: hi...
+2025-12-03 03:46:56,201 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 03:46:56,201 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 03:46:59,663 - backend.app.routers.triage - INFO - Triage completed in 3.58s - Level: Low
+2025-12-03 03:48:58,890 - backend.app.routers.upload - INFO - Document upload request received: A4sizeSD.png
+2025-12-03 03:48:58,919 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 03:48:58,922 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 03:49:26,273 - backend.app.routers.triage - INFO - Triage request received: Symptom checklist:
+• Primary concern:
+• Duration:
+...
+2025-12-03 03:49:26,302 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 03:49:26,303 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 03:49:29,678 - backend.app.routers.triage - INFO - Triage completed in 3.40s - Level: Low
+2025-12-03 03:49:36,250 - backend.app.routers.triage - INFO - Triage request received: Medication inquiry:
+• Medication name:
+• Dosage (i...
+2025-12-03 03:49:36,533 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 03:49:36,533 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 03:49:39,380 - backend.app.routers.triage - INFO - Triage completed in 3.13s - Level: Low
+2025-12-03 03:49:43,488 - backend.app.routers.triage - INFO - Triage request received: I have a medical report I need help understanding....
+2025-12-03 03:49:43,525 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 03:49:43,533 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 03:49:46,640 - backend.app.routers.triage - INFO - Triage completed in 3.15s - Level: Low
+2025-12-03 03:50:01,090 - backend.app.routers.triage - INFO - Triage request received: Vital signs update:
+• Temperature:
+• Blood pressur...
+2025-12-03 03:50:01,201 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 03:50:01,202 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 03:50:05,155 - backend.app.routers.triage - INFO - Triage completed in 4.06s - Level: Low
+2025-12-03 03:52:58,032 - backend.app.routers.triage - INFO - Triage request received: my friends have a problem he has fever 102 flu and...
+2025-12-03 03:52:58,094 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 03:52:58,095 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 03:53:04,673 - backend.app.routers.triage - INFO - Triage completed in 6.64s - Level: High
+2025-12-03 03:53:46,623 - backend.app.routers.triage - INFO - Triage request received: taking medicine dio plus and xenglu met...
+2025-12-03 03:53:46,653 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 03:53:46,662 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 03:53:54,314 - backend.app.routers.triage - INFO - Triage completed in 7.69s - Level: High
