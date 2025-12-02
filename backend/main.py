@@ -80,3 +80,8 @@ def read_root():
             "GET /users/me": "Get current user info"
         }
     }
+
+@app.get("/favicon.ico")
+async def favicon():
+    # Return empty response for favicon to prevent 404 errors
+    return {}
