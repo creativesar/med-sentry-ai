@@ -224,3 +224,31 @@ message: "API key not valid. Please pass a valid API key."
 2025-12-03 03:53:46,653 - backend.app.services.gemini - INFO - Gemini API configured successfully
 2025-12-03 03:53:46,662 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
 2025-12-03 03:53:54,314 - backend.app.routers.triage - INFO - Triage completed in 7.69s - Level: High
+2025-12-03 03:59:27,284 - backend.app.routers.triage - INFO - Triage request received: i have fever...
+2025-12-03 03:59:28,676 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 03:59:28,679 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 03:59:36,586 - backend.app.routers.triage - INFO - Triage completed in 9.30s - Level: Low
+2025-12-03 04:01:01,831 - backend.app.routers.triage - INFO - Triage request received: flu with caugh and its very hard time...
+2025-12-03 04:01:01,880 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 04:01:01,888 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 04:01:14,437 - backend.app.routers.triage - INFO - Triage completed in 12.61s - Level: Medium
+2025-12-03 04:06:22,986 - backend.app.routers.triage - INFO - Triage request received: flu...
+2025-12-03 04:06:23,143 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 04:06:23,286 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 04:06:29,030 - backend.app.routers.triage - INFO - Triage completed in 6.04s - Level: Low
+2025-12-03 04:12:28,324 - backend.app.routers.triage - INFO - Triage request received: bp is 189 and 130...
+2025-12-03 04:12:28,453 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 04:12:28,489 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 04:12:35,227 - backend.app.routers.triage - INFO - Triage completed in 6.90s - Level: High
+2025-12-03 04:13:45,374 - backend.app.routers.triage - INFO - Triage request received: sugar is 400...
+2025-12-03 04:13:45,421 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 04:13:45,434 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 04:13:54,438 - backend.app.routers.triage - INFO - Triage completed in 9.06s - Level: High
+2025-12-03 04:16:13,984 - backend.app.routers.triage - INFO - Triage request received: blood sugar is 399...
+2025-12-03 04:16:14,071 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 04:16:14,075 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 04:16:23,941 - backend.app.routers.triage - INFO - Triage completed in 9.96s - Level: High
+2025-12-03 04:17:16,901 - backend.app.routers.triage - INFO - Triage request received: bp 189 and 145...
+2025-12-03 04:17:16,935 - backend.app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 04:17:16,936 - backend.app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 04:17:26,435 - backend.app.routers.triage - INFO - Triage completed in 9.53s - Level: High

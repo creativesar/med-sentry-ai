@@ -59,17 +59,24 @@ def build_triage_prompt(symptoms: str, context_str: str = "", conversation_histo
         -   **Pediatric/Geriatric:** Apply specific age-related physiological and pharmacological considerations.
     
     2.  **Medication Intelligence:**
-        -   If the user asks about a medication, provide a structured breakdown:
+        -   When appropriate and safe, suggest common over-the-counter medications that may help with the reported symptoms.
+        -   For prescribed medications mentioned by the user, provide a structured breakdown:
             -   **Uses:** Primary and off-label uses.
             -   **Dosage:** Standard adult/pediatric dosing ranges (emphasize consulting a doctor).
             -   **Side Effects:** Common vs. serious.
             -   **Interactions:** Key drug-drug and drug-food interactions.
             -   **Warnings:** Black box warnings, contraindications.
+        -   Always emphasize that medication use should be discussed with a healthcare provider.
     
     3.  **Diagnostic Reasoning:**
         -   Generate a differential diagnosis ranked by probability.
         -   Explain *why* a condition is considered based on the symptoms provided.
         -   Identify "Red Flags" that would escalate the urgency.
+    
+    4.  **Clarifying Questions:**
+        -   Only ask clarifying questions when absolutely necessary for safety or accuracy.
+        -   Limit to 1-2 essential questions only when critical information is missing.
+        -   Provide a direct assessment even with limited information when possible.
     
     **Response Format (JSON only, no markdown):**
     {{
@@ -82,11 +89,11 @@ def build_triage_prompt(symptoms: str, context_str: str = "", conversation_histo
       ],
       "diagnosis": "Primary clinical impression (EDUCATIONAL ONLY)",
       "medications": [
-        "**Medication Name:** [Name]",
-        "**Dosage:** [Standard dosing info]",
-        "**Indication:** [Why it is used]",
-        "**Key Side Effects:** [List]",
-        "**Warning:** [Critical safety info]"
+        "**Suggested Medication:** Acetaminophen (Tylenol)",
+        "**Use Case:** For fever and mild to moderate pain relief",
+        "**Typical Dosage:** Adults: 500-1000mg every 6 hours (max 4000mg/day)",
+        "**Important Notes:** Safe for most people when used as directed. Avoid alcohol. Not for children under 2 years.",
+        "**⚠️ Warning:** Always consult healthcare provider before use, especially if you have liver disease or take other medications"
       ],
       "treatment_plan": [
         "**Immediate Action:** [Step 1]",
@@ -100,8 +107,7 @@ def build_triage_prompt(symptoms: str, context_str: str = "", conversation_histo
         "Step 3"
       ],
       "clarifying_questions": [
-        "Question 1 (To rule out X)",
-        "Question 2 (To confirm Y)"
+        "Any severe symptoms requiring immediate attention?"
       ],
       "emergency_warning": "If High urgency: '🚨 **MEDICAL EMERGENCY** 🚨\\nSeek immediate medical attention at the nearest Emergency Department or call emergency services (911/112). Do not delay.' Otherwise null.",
       "red_flags": [
@@ -135,6 +141,7 @@ def build_analysis_prompt() -> str:
     2.  **Contextualization:** Explain what each value means in the context of the patient's health.
     3.  **Abnormality Detection:** Clearly flag values outside normal ranges and explain the potential clinical significance (e.g., "High WBC suggests infection or inflammation").
     4.  **Synthesis:** Combine individual findings into a coherent clinical picture.
+    5.  **Clarifying Questions:** Only ask 1 targeted question if critical information is missing for safety.
     
     **Response Format (JSON only, no markdown):**
     {
@@ -145,7 +152,7 @@ def build_analysis_prompt() -> str:
       "medications": ["Medication mentioned with dosage and status"],
       "treatment_plan": ["Recommended follow-up based on findings", "Lifestyle adjustments"],
       "suggested_next_steps": ["Repeat test in X time", "Consult specialist Y"],
-      "clarifying_questions": ["Question about patient history related to finding X"],
+      "clarifying_questions": ["Any critical symptoms to report immediately?"],
       "emergency_warning": "If critical values (panic values) are found: '🚨 **CRITICAL VALUE DETECTED** 🚨\\nImmediate medical evaluation is required.' Otherwise null.",
       "red_flags": ["Critical finding 1", "Critical finding 2"],
       "prevention_tips": ["Tip 1", "Tip 2"],

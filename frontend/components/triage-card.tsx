@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertTriangle, CheckCircle, Info, FileText, Download, ShieldAlert, Activity, Pill, Stethoscope, FileSearch } from 'lucide-react';
+import { AlertTriangle, CheckCircle, Info, FileText, Download, ShieldAlert, Activity, Pill, Stethoscope, FileSearch, HelpCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import jsPDF from 'jspdf';
@@ -218,6 +218,29 @@ export function TriageCard({ data }: TriageCardProps) {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                )}
+
+                {/* Clarifying Questions */}
+                {data.clarifying_questions && data.clarifying_questions.length > 0 && (
+                    <div className="space-y-2">
+                        <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+                            <HelpCircle className="w-3 h-3" /> Need More Information?
+                        </h4>
+                        <div className="grid grid-cols-1 gap-2">
+                            {data.clarifying_questions.map((question, idx) => (
+                                <div
+                                    key={idx}
+                                    className="bg-blue-50 dark:bg-blue-900/20 px-4 py-3 rounded-xl text-sm font-medium border border-blue-100 dark:border-blue-900/30 flex items-start gap-3 shadow-sm"
+                                >
+                                    <span className="w-2 h-2 rounded-full bg-blue-500 mt-1.5 shrink-0"></span>
+                                    <span className="text-blue-800 dark:text-blue-200">{question}</span>
+                                </div>
+                            ))}
+                        </div>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                            Please answer these questions to help us provide a more accurate assessment.
+                        </p>
                     </div>
                 )}
 
