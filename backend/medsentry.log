@@ -432,3 +432,7 @@ metadata {
 , locale: "en-US"
 message: "API key not valid. Please pass a valid API key."
 ]
+2025-12-03 12:24:47,355 - app.routers.triage - INFO - Triage request received: flu...
+2025-12-03 12:24:47,699 - app.services.gemini - INFO - Gemini API configured successfully
+2025-12-03 12:24:47,700 - app.services.gemini - INFO - Using Gemini model: gemini-2.0-flash
+2025-12-03 12:24:56,117 - app.routers.triage - INFO - Triage completed in 8.76s - Level: Low
