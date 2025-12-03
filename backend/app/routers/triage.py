@@ -81,18 +81,10 @@ async def triage_symptoms(triage_request: schemas.TriageRequest, request: Reques
                         except:
                             conversation_history += f"AI: {msg.text_content}\n"
 
-        # Language support
-        language_instruction = ""
-        if triage_request.language == "ur":
-            language_instruction = "\n**LANGUAGE INSTRUCTION:** Respond in Urdu (اردو). Provide all responses in Urdu script. Maintain medical accuracy while using Urdu language."
-        elif triage_request.language == "hi":
-            language_instruction = "\n**LANGUAGE INSTRUCTION:** Respond in Hindi (हिंदी). Provide all responses in Devanagari script. Maintain medical accuracy while using Hindi language."
-
         prompt = gemini.build_triage_prompt(
             symptoms=triage_request.symptoms,
             context_str=context_str,
-            conversation_history=conversation_history,
-            language_instruction=language_instruction
+            conversation_history=conversation_history
         )
 
         model = gemini.get_model()

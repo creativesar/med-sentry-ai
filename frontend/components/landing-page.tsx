@@ -29,7 +29,11 @@ import {
   TrendingUp,
   Smartphone,
   Pill,
-  Headphones
+  Headphones,
+  Cpu,
+  Database,
+  GitBranch,
+  Server
 } from 'lucide-react';
 
 export function LandingPage() {
@@ -123,10 +127,6 @@ export function LandingPage() {
       description: "Access medical guidance anytime, anywhere without appointment scheduling or waiting periods."
     },
     {
-      title: "Multilingual Support",
-      description: "Communicate in your preferred language with our AI translation capabilities supporting 20+ languages."
-    },
-    {
       title: "Contextual Understanding",
       description: "Our AI remembers your conversation history for more personalized and accurate guidance over time."
     },
@@ -165,42 +165,48 @@ export function LandingPage() {
   ];
 
   const aboutPoints = [
-    "Evidence-based medical guidance using latest AI technology",
-    "Secure and private - your health data is always protected",
-    "Developed by healthcare professionals for patient safety",
-    "Continuously updated with latest medical research and protocols"
+    { text: "Evidence-based medical guidance using latest AI technology", icon: <Brain className="w-6 h-6" /> },
+    { text: "Secure and private - your health data is always protected", icon: <Shield className="w-6 h-6" /> },
+    { text: "Developed by healthcare professionals for patient safety", icon: <Stethoscope className="w-6 h-6" /> },
+    { text: "Continuously updated with latest medical research and protocols", icon: <TrendingUp className="w-6 h-6" /> }
   ];
 
   const chatbotCapabilities = [
     {
       icon: <MessageSquare className="w-12 h-12" />,
       title: "Natural Conversation",
-      description: "Chat naturally about your symptoms and health concerns with intelligent follow-up questions."
+      description: "Chat naturally about your symptoms and health concerns with intelligent follow-up questions.",
+      badge: "Popular"
     },
     {
       icon: <Activity className="w-12 h-12" />,
       title: "Symptom Analysis",
-      description: "Advanced AI analyzes symptoms and provides evidence-based triage recommendations instantly."
+      description: "Advanced AI analyzes symptoms and provides evidence-based triage recommendations instantly.",
+      badge: "AI-Powered"
     },
     {
       icon: <FileText className="w-12 h-12" />,
       title: "Document Reading",
-      description: "Upload medical reports, prescriptions, and lab results for instant AI-powered analysis."
+      description: "Upload medical reports, prescriptions, and lab results for instant AI-powered analysis.",
+      badge: "OCR Technology"
     },
     {
       icon: <TrendingUp className="w-12 h-12" />,
       title: "Health Insights",
-      description: "Get personalized health insights and track your wellness journey over time."
+      description: "Get personalized health insights and track your wellness journey over time.",
+      badge: "Analytics"
     },
     {
       icon: <Clock className="w-12 h-12" />,
       title: "Instant Response",
-      description: "Get medical guidance in seconds, available 24/7 without appointment scheduling."
+      description: "Get medical guidance in seconds, available 24/7 without appointment scheduling.",
+      badge: "24/7"
     },
     {
       icon: <Lock className="w-12 h-12" />,
       title: "Maximum Privacy",
-      description: "Military-grade encryption ensures your health data stays completely private and secure."
+      description: "Military-grade encryption ensures your health data stays completely private and secure.",
+      badge: "Secure"
     }
   ];
 
@@ -397,8 +403,8 @@ export function LandingPage() {
                     viewport={{ once: true }}
                     className="flex items-start gap-3"
                   >
-                    <CheckCircle className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-1" />
-                    <span className="text-slate-700 dark:text-slate-300">{point}</span>
+                    <div className="text-blue-600 dark:text-cyan-400 flex-shrink-0 mt-1">{point.icon}</div>
+                    <span className="text-slate-700 dark:text-slate-300">{point.text}</span>
                   </motion.div>
                 ))}
               </div>
@@ -474,6 +480,11 @@ export function LandingPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="relative z-10">
+                  {capability.badge && (
+                    <div className="mb-3 inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 text-xs font-semibold rounded-full">
+                      {capability.badge}
+                    </div>
+                  )}
                   <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
                     {capability.icon}
                   </div>
@@ -509,23 +520,31 @@ export function LandingPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Accuracy Counter */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300"
-            >
-              <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/20">
-                <Award className="w-7 h-7 text-white" />
-              </div>
-              <div className="text-5xl md:text-6xl font-bold text-white mb-2">
-                {counters.accuracy.toFixed(1)}%
-              </div>
-              <div className="text-blue-100 text-lg font-semibold">Accuracy Rate</div>
-              <p className="text-blue-50 text-sm mt-2">Verified clinical accuracy</p>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 group cursor-pointer"
+              >
+                <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/20 group-hover:bg-white/30 transition-all">
+                  <Award className="w-7 h-7 text-white" />
+                </div>
+                <div className="text-5xl md:text-6xl font-bold text-white mb-2 group-hover:scale-110 transition-transform">
+                  {counters.accuracy.toFixed(1)}%
+                </div>
+                <div className="text-blue-100 text-lg font-semibold">Accuracy Rate</div>
+                <p className="text-blue-50 text-sm mt-2">Verified clinical accuracy</p>
+                <div className="mt-4 h-2 bg-white/10 rounded-full overflow-hidden">
+                  <motion.div
+                    className="h-full bg-white/40 rounded-full"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${Math.min(counters.accuracy, 100)}%` }}
+                    transition={{ duration: 2 }}
+                    viewport={{ once: true }}
+                  />
+                </div>
+              </motion.div>
 
             {/* Response Time Counter */}
             <motion.div
@@ -533,16 +552,17 @@ export function LandingPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300"
+              className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 group cursor-pointer"
             >
-              <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/20">
+              <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/20 group-hover:bg-white/30 transition-all">
                 <Zap className="w-7 h-7 text-white" />
               </div>
-              <div className="text-5xl md:text-6xl font-bold text-white mb-2">
+              <div className="text-5xl md:text-6xl font-bold text-white mb-2 group-hover:scale-110 transition-transform">
                 {counters.responseTime.toFixed(2)}s
               </div>
               <div className="text-blue-100 text-lg font-semibold">Response Time</div>
               <p className="text-blue-50 text-sm mt-2">Average response time</p>
+              <div className="mt-4 text-xs text-blue-100">⚡ Faster than human thought</div>
             </motion.div>
 
             {/* Uptime Counter */}
@@ -551,16 +571,25 @@ export function LandingPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300"
+              className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 group cursor-pointer"
             >
-              <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/20">
+              <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/20 group-hover:bg-white/30 transition-all">
                 <Globe className="w-7 h-7 text-white" />
               </div>
-              <div className="text-5xl md:text-6xl font-bold text-white mb-2">
+              <div className="text-5xl md:text-6xl font-bold text-white mb-2 group-hover:scale-110 transition-transform">
                 {counters.uptime.toFixed(1)}%
               </div>
               <div className="text-blue-100 text-lg font-semibold">Uptime</div>
               <p className="text-blue-50 text-sm mt-2">24/7 Availability</p>
+              <div className="mt-4 h-2 bg-white/10 rounded-full overflow-hidden">
+                <motion.div
+                  className="h-full bg-green-400/60 rounded-full"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${Math.min(counters.uptime, 100)}%` }}
+                  transition={{ duration: 2 }}
+                  viewport={{ once: true }}
+                />
+              </div>
             </motion.div>
 
             {/* Users Counter */}
@@ -569,16 +598,17 @@ export function LandingPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300"
+              className="text-center bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 group cursor-pointer"
             >
-              <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/20">
+              <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/20 group-hover:bg-white/30 transition-all">
                 <Users className="w-7 h-7 text-white" />
               </div>
-              <div className="text-5xl md:text-6xl font-bold text-white mb-2">
+              <div className="text-5xl md:text-6xl font-bold text-white mb-2 group-hover:scale-110 transition-transform">
                 {(counters.patients / 1000).toFixed(0)}K+
               </div>
               <div className="text-blue-100 text-lg font-semibold">Assessments</div>
               <p className="text-blue-50 text-sm mt-2">Health assessments completed</p>
+              <div className="mt-4 text-xs text-blue-100">👥 Growing community</div>
             </motion.div>
           </div>
         </div>
@@ -624,6 +654,158 @@ export function LandingPage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack Section */}
+      <section id="technology" className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-950">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">Powered by Advanced Technology</h2>
+            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+              Built on cutting-edge AI, secure infrastructure, and proven medical standards
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: <Brain className="w-8 h-8" />, title: "Advanced AI", desc: "State-of-the-art neural networks" },
+              { icon: <Shield className="w-8 h-8" />, title: "HIPAA Compliant", desc: "Enterprise-grade security" },
+              { icon: <Cpu className="w-8 h-8" />, title: "Cloud Optimized", desc: "Scalable infrastructure" },
+              { icon: <Database className="w-8 h-8" />, title: "Real-time Data", desc: "Sub-second latency" }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all border border-slate-100 dark:border-slate-700"
+              >
+                <div className="text-blue-600 dark:text-cyan-400 mb-4">{item.icon}</div>
+                <h3 className="font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section id="use-cases" className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900/50">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">Real-World Use Cases</h2>
+            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+              How people use MedSentry AI to improve their health decisions
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Activity className="w-10 h-10" />,
+                title: "Quick Symptom Check",
+                description: "Get immediate triage assessment for sudden symptoms without waiting for appointments",
+                example: "'Sharp chest pain with shortness of breath' - Immediate emergency alert"
+              },
+              {
+                icon: <FileText className="w-10 h-10" />,
+                title: "Medical Report Analysis",
+                description: "Upload lab results or medical reports for instant AI-powered interpretation",
+                example: "Blood test results analyzed and explained in plain language"
+              },
+              {
+                icon: <Clock className="w-10 h-10" />,
+                title: "24/7 Health Guidance",
+                description: "Get answers to health questions anytime, anywhere at your convenience",
+                example: "Medication interactions checked in seconds, any time of day"
+              }
+            ].map((useCase, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-slate-200 dark:border-slate-700"
+              >
+                <div className="text-blue-600 dark:text-cyan-400 mb-4">{useCase.icon}</div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{useCase.title}</h3>
+                <p className="text-slate-700 dark:text-slate-300 mb-4">{useCase.description}</p>
+                <div className="bg-white dark:bg-slate-700/50 rounded-lg p-4 border-l-4 border-blue-600 dark:border-cyan-400">
+                  <p className="text-sm text-slate-600 dark:text-slate-400 italic">{useCase.example}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Section */}
+      <section id="comparison" className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-900/50">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4">Why MedSentry Stands Out</h2>
+            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+              See how we compare to traditional healthcare approaches
+            </p>
+          </motion.div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b-2 border-slate-300 dark:border-slate-700">
+                  <th className="text-left py-4 px-4 font-bold text-slate-900 dark:text-white">Feature</th>
+                  <th className="text-center py-4 px-4 font-bold text-slate-900 dark:text-white">MedSentry AI</th>
+                  <th className="text-center py-4 px-4 font-bold text-slate-900 dark:text-white">ER Visit</th>
+                  <th className="text-center py-4 px-4 font-bold text-slate-900 dark:text-white">Doctor Appointment</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { feature: "Availability", medsentry: "24/7", er: "24/7", doctor: "Business hours" },
+                  { feature: "Wait Time", medsentry: "< 5 seconds", er: "2-4 hours", doctor: "Days/weeks" },
+                  { feature: "Cost", medsentry: "Free-$9.99/mo", er: "$1000+", doctor: "$100-300" },
+                  { feature: "Preliminary Assessment", medsentry: "✓", er: "✓", doctor: "✓" },
+                  { feature: "Privacy", medsentry: "End-to-end encrypted", er: "Limited", doctor: "Limited" },
+                  { feature: "Medical Records", medsentry: "Analyze", er: "Review", doctor: "Review" }
+                ].map((row, index) => (
+                  <motion.tr
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.05 }}
+                    viewport={{ once: true }}
+                    className="border-b border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+                  >
+                    <td className="py-4 px-4 font-semibold text-slate-900 dark:text-white">{row.feature}</td>
+                    <td className="py-4 px-4 text-center text-emerald-600 dark:text-emerald-400 font-semibold">{row.medsentry}</td>
+                    <td className="py-4 px-4 text-center text-slate-600 dark:text-slate-400">{row.er}</td>
+                    <td className="py-4 px-4 text-center text-slate-600 dark:text-slate-400">{row.doctor}</td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

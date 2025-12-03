@@ -55,24 +55,11 @@ export function Sidebar({
                 isOpen ? "translate-x-0" : "-translate-x-full"
             )}>
                 {/* Header */}
-                <div className="p-6 border-b border-slate-300 dark:border-slate-800 flex items-center justify-between bg-slate-200 dark:bg-slate-900">
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-sm">
-                            <Activity className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                            <h1 className="font-bold text-xl tracking-tight text-slate-900 dark:text-white">MedSentry</h1>
-                            <p className="text-[10px] font-bold text-primary uppercase tracking-wider">AI Medical Assistant</p>
-                        </div>
+                <div className="p-4 border-b border-slate-300 dark:border-slate-800 flex items-center justify-center bg-slate-200 dark:bg-slate-900">
+                    <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center shadow-lg">
+                        <Activity className="w-6 h-6 text-white" />
+                        <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-slate-100 dark:border-slate-900 animate-pulse" />
                     </div>
-                    <Button
-                        variant="ghost"
-                        size="icon"
-                        className="md:hidden text-slate-500 hover:text-slate-900 dark:hover:text-white"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        <ChevronLeft className="w-5 h-5" />
-                    </Button>
                 </div>
 
                 {/* Actions */}

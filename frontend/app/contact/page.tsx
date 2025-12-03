@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone, Send, MessageSquare, HelpCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) => (
     <motion.div
@@ -201,12 +202,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="py-12 border-t border-slate-800/50 text-slate-400 text-sm bg-slate-950">
-                <div className="max-w-7xl mx-auto px-6 text-center">
-                    © 2025 MedSentry AI. All rights reserved.
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

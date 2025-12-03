@@ -4,8 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from slowapi import _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 
-from .app import models, database, utils
-from .app.routers import auth, users, triage, upload, history
+from app import models, database, utils
+from app.routers import auth, users, triage, upload, history
 
 # Configure logging
 try:
@@ -61,7 +61,6 @@ def read_root():
             "Medication interaction checking",
             "Laboratory value interpretation",
             "Medical Q&A with evidence-based answers",
-            "Multi-language support (English, Urdu, Hindi)",
             "Conversation history and context awareness",
             "Patient context-aware responses",
             "Red flag symptom detection",

@@ -15,6 +15,7 @@ import {
     Users
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) => (
     <motion.div
@@ -99,11 +100,11 @@ export default function ServicesPage() {
                             }
                         ].map((service, i) => (
                             <FadeIn key={i} delay={i * 0.1}>
-                                <div className="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all group">
-                                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                        <service.icon className="w-7 h-7 text-cyan-400" />
+                                <div className="p-8 rounded-3xl bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all group shadow-lg hover:shadow-cyan-500/5 h-full">
+                                    <div className="w-14 h-14 rounded-2xl bg-slate-800/50 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform border border-white/5 group-hover:border-cyan-500/20">
+                                        <service.icon className="w-7 h-7 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
                                     </div>
-                                    <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-100 transition-colors">{service.title}</h3>
                                     <p className="text-slate-400 mb-6 leading-relaxed">{service.desc}</p>
                                     <ul className="space-y-2">
                                         {service.features.map((feature, idx) => (
@@ -200,11 +201,11 @@ export default function ServicesPage() {
                             }
                         ].map((benefit, i) => (
                             <FadeIn key={i} delay={i * 0.1}>
-                                <div className="p-6 rounded-xl bg-slate-900/50 border border-slate-800">
-                                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center mb-4">
-                                        <benefit.icon className="w-6 h-6 text-cyan-400" />
+                                <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all group shadow-lg hover:shadow-cyan-500/5 h-full">
+                                    <div className="w-12 h-12 rounded-xl bg-slate-800/50 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform border border-white/5 group-hover:border-cyan-500/20">
+                                        <benefit.icon className="w-6 h-6 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
                                     </div>
-                                    <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
+                                    <h3 className="text-xl font-bold mb-2 text-white group-hover:text-cyan-100 transition-colors">{benefit.title}</h3>
                                     <p className="text-slate-400">{benefit.desc}</p>
                                 </div>
                             </FadeIn>
@@ -213,25 +214,7 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="py-16 border-t border-slate-800 text-slate-400 text-sm bg-slate-950 mt-20">
-                <div className="max-w-7xl mx-auto px-6">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
-                        <div className="flex items-center gap-2 font-bold text-white text-lg">
-                            <span>MedSentry AI</span>
-                        </div>
-                        <div className="flex gap-8">
-                            <a href="/about" className="hover:text-white transition-colors">About</a>
-                            <a href="/" className="hover:text-white transition-colors">Home</a>
-                            <a href="/features" className="hover:text-white transition-colors">Features</a>
-                            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
-                        </div>
-                    </div>
-                    <div className="text-center text-slate-500 border-t border-slate-800 pt-8">
-                        © 2025 MedSentry AI. All rights reserved.
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, ShieldCheck, Phone, Settings, Bell } from 'lucide-react';
+import { Menu, ShieldCheck, Phone, Settings, Bell, Activity } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
@@ -11,23 +11,25 @@ interface ChatHeaderProps {
 export function ChatHeader({ onOpenSidebar, onOpenProfile }: ChatHeaderProps) {
     return (
         <header className="flex justify-between items-center px-6 py-4 bg-slate-100 dark:bg-[#0F172A] border-b border-slate-300 dark:border-slate-800 z-20 sticky top-0">
-            <div className="flex items-center gap-4">
-                <Button variant="ghost" size="icon" onClick={onOpenSidebar} className="md:hidden text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
+            <div className="flex items-center gap-3">
+                <Button variant="ghost" size="icon" onClick={onOpenSidebar} className="text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
                     <Menu className="w-5 h-5" />
                 </Button>
-                <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-sm">
-                        <ShieldCheck className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                        <h1 className="font-bold text-lg leading-tight text-slate-900 dark:text-white tracking-tight">MedSentry AI</h1>
-                        <div className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                            <p className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">System Online</p>
-                        </div>
+
+                <div className="relative w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center shadow-md">
+                    <Activity className="w-5 h-5 text-white" />
+                    <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-green-500 rounded-full border border-slate-900 animate-pulse" />
+                </div>
+
+                <div>
+                    <h3 className="font-semibold text-sm leading-tight text-slate-900 dark:text-white">MedSentry AI</h3>
+                    <div className="flex items-center gap-1.5">
+                        <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
+                        <p className="text-[10px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide">System Online</p>
                     </div>
                 </div>
             </div>
+
             <div className="flex items-center gap-2 md:gap-3">
                 <Button
                     variant="outline"

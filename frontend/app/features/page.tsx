@@ -19,6 +19,7 @@ import {
     ArrowRight
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) => (
     <motion.div
@@ -73,11 +74,6 @@ export default function FeaturesPage() {
                                 desc: "SOC2 compliant with end-to-end encryption. Your medical data is protected with bank-level security."
                             },
                             {
-                                icon: Globe,
-                                title: "95+ Languages",
-                                desc: "Communicate in your native language. Our AI understands medical terminology across all supported languages."
-                            },
-                            {
                                 icon: FileText,
                                 title: "Document Intelligence",
                                 desc: "Upload and analyze PDFs, images, and medical reports. OCR and NLP extract key medical information."
@@ -104,11 +100,11 @@ export default function FeaturesPage() {
                             }
                         ].map((feature, i) => (
                             <FadeIn key={i} delay={i * 0.1}>
-                                <div className="p-6 rounded-xl bg-slate-900/50 border border-slate-800 hover:border-cyan-500/30 transition-all group">
-                                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                        <feature.icon className="w-6 h-6 text-cyan-400" />
+                                <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 hover:border-cyan-500/30 transition-all group shadow-lg hover:shadow-cyan-500/5 h-full">
+                                    <div className="w-12 h-12 rounded-xl bg-slate-800/50 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform border border-white/5 group-hover:border-cyan-500/20">
+                                        <feature.icon className="w-6 h-6 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
                                     </div>
-                                    <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                                    <h3 className="text-xl font-bold mb-2 text-white group-hover:text-cyan-100 transition-colors">{feature.title}</h3>
                                     <p className="text-slate-400">{feature.desc}</p>
                                 </div>
                             </FadeIn>
@@ -132,8 +128,8 @@ export default function FeaturesPage() {
                             { value: "24/7", label: "Availability", icon: Globe }
                         ].map((stat, i) => (
                             <FadeIn key={i} delay={i * 0.1}>
-                                <div className="text-center p-6 rounded-xl bg-slate-900/50 border border-slate-800">
-                                    <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center mx-auto mb-4">
+                                <div className="text-center p-6 rounded-3xl bg-slate-900 border border-slate-800 shadow-lg hover:shadow-cyan-500/5 transition-all">
+                                    <div className="w-12 h-12 rounded-xl bg-slate-800/50 flex items-center justify-center mx-auto mb-4 border border-white/5">
                                         <stat.icon className="w-6 h-6 text-cyan-400" />
                                     </div>
                                     <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-500 mb-2">
@@ -178,7 +174,7 @@ export default function FeaturesPage() {
                             }
                         ].map((testimonial, i) => (
                             <FadeIn key={i} delay={i * 0.1}>
-                                <div className="p-8 rounded-xl bg-slate-900/50 border border-slate-800">
+                                <div className="p-8 rounded-3xl bg-slate-900 border border-slate-800 shadow-lg hover:shadow-cyan-500/5 transition-all">
                                     <div className="flex gap-1 mb-4">
                                         {[1, 2, 3, 4, 5].map((star) => (
                                             <Sparkles key={star} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
@@ -217,12 +213,7 @@ export default function FeaturesPage() {
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="py-12 border-t border-slate-800/50 text-slate-400 text-sm bg-slate-950">
-                <div className="max-w-7xl mx-auto px-6 text-center">
-                    © 2025 MedSentry AI. All rights reserved.
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

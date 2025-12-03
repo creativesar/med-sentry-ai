@@ -16,6 +16,7 @@ import {
     Sparkles
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const FadeIn = ({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) => (
     <motion.div
@@ -83,11 +84,6 @@ export default function ChatbotPage() {
                                 icon: FileText,
                                 title: "Document Analysis",
                                 desc: "Upload lab results, prescriptions, or medical reports. The chatbot can read and interpret medical documents."
-                            },
-                            {
-                                icon: Languages,
-                                title: "Multilingual Support",
-                                desc: "Communicate in your preferred language. We support 95+ languages with native-level understanding."
                             },
                             {
                                 icon: Shield,
@@ -244,12 +240,7 @@ export default function ChatbotPage() {
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="py-12 border-t border-slate-800/50 text-slate-400 text-sm bg-slate-950">
-                <div className="max-w-7xl mx-auto px-6 text-center">
-                    © 2025 MedSentry AI. All rights reserved.
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }
